@@ -1,0 +1,1527 @@
+<!--{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}-->
+
+
+
+
+
+<!-- =============================================================================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodhub</title>
+
+  <!--
+    - custom css link 
+    
+  # These are just lines! The cross reference I used.
+  <link rel="stylesheet" type="text/css" href="assets/css/foodhub.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/media_query.css">  -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/foodhub.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/media_query.css') }}">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    
+
+</head>
+
+<body>
+
+  <!--
+    - main container
+  -->
+
+  <div class="container">
+
+    <!--
+      - #HEADER
+    -->
+
+    <header>
+
+      <nav class="navbar">
+
+        <div class="navbar-wrapper">
+
+          <a href="#">
+            <img src="https://lh7-us.googleusercontent.com/LmEP6YxjNClY__HGHtMPfFnfF_y3ZQeJrfrXx9nMt8beWLJtwOEQLpLE1MiebJuH9hzXOPHU9PEeRy4zY7ouDJCeEsaoUp8X8_9J3smaC64RROULFweTCgNEoX7U6AwCRzvEtOP_iF5g8pKo" alt="logo" width="50" height="50">
+          </a>
+
+          <ul class="navbar-nav">
+
+            <li>
+              <a href="#home" class="nav-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#about" class="nav-link">About</a>
+            </li>
+
+            <li>
+              <a href="#services" class="nav-link">Services</a>
+            </li>
+
+            <li>
+              <a href="#menu" class="nav-link">Our Menu</a>
+            </li>
+
+            <li>
+              <a href="#testimonials" class="nav-link">Testimonials</a>
+            </li>
+            <!--
+            <a class="nav-item nav-link" id="login" href="/login" style="float: right;">Login</a>
+                  <a class="nav-item nav-link" id="logout" href="/logout" style="float: right;">Logout</a>
+                  <a class="nav-item nav-link" id="signUp" href="/sign-up" style="float: right;">Sign Up</a> -->
+
+          </ul>
+
+          <div class="navbar-btn-group">
+
+            <button class="shopping-cart-btn">
+              <img src="https://lh7-us.googleusercontent.com/HDpGro4RQ7RTVxmTL7sNna4OZhQ9WVNvdvn5IXYTItHl0Yuse97OINaTng9A8nIHe286ejADjrfOSXGnp8KNHpPUpu-bJr_j7GYJnhNW2R82copLK9qJTp06CpLdCy8vWuNgN38pf69P0UkV" alt="shopping cart icon" width="18" height="18">
+              <span class="count">5</span>
+            </button>
+
+            <button class="menu-toggle-btn">
+              <span class="line one"></span>
+              <span class="line two"></span>
+              <span class="line three"></span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      <div class="cart-box">
+
+        <ul class="cart-box-ul">
+
+          <h4 class="cart-h4">Your order.</h4>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="https://lh7-us.googleusercontent.com/ZuddJ7jaoT8NCNTkulYyz13fwv7U7Uqj090obY-lWDp3mGWaqnwAov4StORWaNIqxQ_oRI_SCjwAdaPzakgpXFGhOf8QWk6swHsEKPms-u9MzSQk7krIkFnixsIsKgIwLxlFs-SeOGKV8Jk7" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Chicken Biryanix</h5>
+              <p class="product-price">
+                <span class="small">$</span>9
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="https://lh7-us.googleusercontent.com/vi2ycr_6YUNocLhcU6amog0Q2WhiiERSJ4dqbonsvsyU79Ppeshu3llpCX__oIwnFwETBV-uZVwYV-J7xC_hTAztkZyoVnRESzkSUuou3-OY7s9jwe_66Cax7XH1-gYQjVtgD5aGYegvnr2O" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Chicken Tikka Masala</h5>
+              <p class="product-price">
+                <span class="small">$</span>14
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="https://lh7-us.googleusercontent.com/lcB5OYZYhS_uhiv-hvxMynIS1aDUKVjcwQYqyjR-jN5T7IoDTNfV3cFQGipo0s9tkRTpUmiQpj7ZFsXFXSHZuE99RGN9QPvBJCyNlJ4JOgypVgugsNn_iijuY90pH6xmq4tYDDopRx7tiheJ" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Rasmalai</h5>
+              <p class="product-price">
+                <span class="small">$</span>4
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="https://lh7-us.googleusercontent.com/lcB5OYZYhS_uhiv-hvxMynIS1aDUKVjcwQYqyjR-jN5T7IoDTNfV3cFQGipo0s9tkRTpUmiQpj7ZFsXFXSHZuE99RGN9QPvBJCyNlJ4JOgypVgugsNn_iijuY90pH6xmq4tYDDopRx7tiheJ" alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Gulab Jamun</h5>
+              <p class="product-price">
+                <span class="small">$</span>11
+              </p>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="cart-item">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='') }}"alt="product image" class="product-img" width="50" height="50"
+                  loading="lazy">
+              </div>
+
+              <h5 class="product-name">Sea bream carpaccio</h5>
+              <p class="product-price">
+                <span class="small">$</span>19
+              </p>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="cart-btn-group">
+          <button class="btn btn-secondary">View order</button>
+          <button class="btn btn-primary">Checkout</button>
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+
+
+    <main>
+
+      <!--
+        - #HOME SECTION
+      -->
+
+      <section class="home" id="home">
+
+        <div class="home-left">
+
+          <p class="home-subtext">Hi, new friend!</p>
+
+          <h1 class="main-heading">We do not cook, we create your emotions!</h1>
+
+          <p class="home-text">
+            Explore the most authentic taste.
+          </p>
+
+          <div class="btn-group">
+
+            <!--button-- class="btn btn-primary btn-icon">
+              <img src="{{ url_for('static', filename='images/menu.svg') }}" alt="menu icon">
+              Our menu
+            </!--button-->
+              <!--#These are not required. Just an Excess-->
+            <!--button class="btn btn-secondary btn-icon">
+              <img src="{{ url_for('static', filename='images/arrow.svg') }}" alt="menu icon">
+              About us
+            </!button-->
+
+          </div>
+
+        </div>
+
+        <div class="home-right">
+
+          <img src="{{ url_for('static', filename='images/chickentikkamasala.png') }}" alt="food image" class="food-img food-1" width="50" loading="lazy" style="border-radius: 50%;">
+          <img src="{{ url_for('static', filename='images/chickenbiryani.png') }}" alt="food image" class="food-img food-2" width="50"  loading="lazy" style="border-radius: 50%;">
+          <img src="{{ url_for('static', filename='images/gajarkahalwa.png') }}" alt="food image" class="food-img food-3" width="50"  loading="lazy" style="border-radius: 50%;">
+
+          <!--<img src="./assets/images/chickentikkamasala.png" alt="food image" class="food-img food-2" width="200" loading="lazy">
+          <img src="./assets/images/gajarkahalwa.png" alt="food image" class="food-img food-3" width="200" loading="lazy"> -->
+            <!-- These are Extra Dialouge images.
+          <img src="{{ url_for('static', filename='images/dialouge1.svg') }}" alt="dialog" class="dialog dialog-1" width="230">
+          <img src="{{ url_for('static', filename='images/dialouge2.svg') }}" alt="dialog" class="dialog dialog-2" width="230">
+            -->
+          <img src="{{ url_for('static', filename='images/circle.svg') }}" alt="circle shape" class="shape shape-1" width="25">
+          <img src="{{ url_for('static', filename='images/circle.svg') }}" alt="circle shape" class="shape shape-2" width="15">
+          <img src="{{ url_for('static', filename='images/circle.svg') }}" alt="circle shape" class="shape shape-3" width="30">
+          <img src="{{ url_for('static', filename='images/ring.svg') }}" alt="ring shape" class="shape shape-4" width="60">
+          <img src="{{ url_for('static', filename='images/ring.svg') }}" alt="ring shape" class="shape shape-5" width="40"> 
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #ABOUT SECTION
+      -->
+
+      <section class="about" id="about">
+
+        <div class="about-left">
+
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/ChefImage.jpg') }}" alt="about image" class="about-img" width="250">
+          </div>
+
+          <div class="abs-content-box">
+            <div class="dotted-border">
+              <p class="number-lg">8</p>
+              <p class="text-md">Years <br> Experiense</p>
+            </div>
+          </div>
+
+          <img src="{{ url_for('static', filename='images/circle.svg') }}" alt="circle shape" class="shape shape-6" width="20">
+          <img src="{{ url_for('static', filename='images/circle.svg') }}" alt="circle shape" class="shape shape-7" width="30">
+          <img src="{{ url_for('static', filename='images/ring.svg') }}" alt="ring shape" class="shape shape-8" width="35">
+          <img src="{{ url_for('static', filename='images/ring.svg') }}" alt="ring shape" class="shape shape-9" width="80">
+
+        </div>
+
+        <div class="about-right">
+
+          <h2 class="section-title">We are doing more than
+            you expect</h2>
+
+          <p class="section-text">
+            Welcome to Spicefusion Bistro!
+
+At Spicefusion we cook with an unwavering passion that transcends every dish we prepare. Our culinary journey is fueled by a relentless desire for the perfect taste, as we believe that every bite should be a celebration of flavors.
+
+We take pride in our commitment to excellence, and it reflects in every dish we serve. From the selection of the finest ingredients to the careful crafting of each recipe, we strive for nothing less than culinary perfection. Our goal is simple: to deliver an unparalleled dining experience that leaves you craving for more.
+
+At the heart of our kitchen is a team dedicated to creating culinary masterpieces. We understand that your satisfaction is the true measure of our success. That's why we go above and beyond to ensure that every plate that leaves our kitchen is a masterpiece of taste, quality, and passion.
+
+Join us on a gastronomic journey where every dish is a testament to our love for cooking and our commitment to delivering the very best. Thank you for choosing SpiceFusion Bistro. We look forward to serving you with passion and excellence.
+          </p>
+
+          
+
+          <img src="{{ url_for('static', filename='images/signature.png') }}" alt="signature" class="signature" width="350">
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #SERVICES SECTION
+      -->
+
+      <section class="services" id="services">
+
+        <div class="service-card">
+      
+          <p class="card-number">01</p>
+      
+          <h3 class="card-heading">We are located in the city center</h3>
+      
+          <p class="card-text">
+            Discover the convenience of our central location, making us easily accessible for you. Whether you're a local resident or visiting the city, finding us is a breeze.
+          </p>
+      
+        </div>
+      
+        <div class="service-card">
+      
+          <p class="card-number">02</p>
+      
+          <h3 class="card-heading">Fresh ingredients from organic farms</h3>
+      
+          <p class="card-text">
+            Savor the goodness of our dishes prepared with the freshest ingredients sourced directly from organic farms. We prioritize quality and your well-being.
+          </p>
+      
+        </div>
+      
+        <div class="service-card">
+      
+          <p class="card-number">03</p>
+      
+          <h3 class="card-heading">Own fast delivery. 30 min Maximum</h3>
+      
+          <p class="card-text">
+            Experience the convenience of our swift and reliable delivery service. We guarantee your order will reach you within 30 minutes, ensuring hot and delicious meals every time.
+          </p>
+      
+        </div>
+      
+        <div class="service-card">
+      
+          <p class="card-number">04</p>
+      
+          <h3 class="card-heading">Professional, experienced chefs</h3>
+      
+          <p class="card-text">
+            Indulge in culinary creations crafted by our team of professional and experienced chefs. Each dish is a masterpiece, reflecting their dedication and skill.
+          </p>
+      
+        </div>
+      
+        <div class="service-card">
+      
+          <p class="card-number">05</p>
+      
+          <h3 class="card-heading">The highest standards of service</h3>
+      
+          <p class="card-text">
+            Elevate your dining experience with our commitment to providing the highest standards of service. Your satisfaction is our priority, and we aim to exceed your expectations.
+          </p>
+      
+        </div>
+      
+      </section>
+      
+
+
+
+
+
+      <!--
+        - #PRODUCT SECTION
+      -->
+      
+ 
+      <section class="product" id="menu">
+
+        <h2 class="section-title">The Menu</h2>
+
+        <p class="section-text">
+          Our menu is a curated masterpiece, inviting you to savor the extraordinary. 
+          From the soul-soothing Veg Manchow to the indulgent Guntur Chilli Chicken, each dish is meticulously crafted, 
+          promising a symphony of flavors. Dive into the fragrant embrace of our Hyderabadi Veg Dum Biryani or relish the 
+          timeless elegance of Rasmalai. Every bite is a revelation, and every sip, be it Sprite or Coke, is a refreshing journey. 
+          Immerse yourself in the finest dining experience, where authenticity meets innovation - a celebration of taste awaits your 
+          discerning palate.
+        </p>
+
+        <h4 class="section-title">Veg Soup</h4>
+
+        <div class="products-grid">
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/VegManchowSoup.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              
+              </div>
+
+              
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Veg Manchow</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          
+
+          <!--<h4 class="section-title">Non-Veg Soup</h4>-->
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ChickenManchowSoup.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Chicken Manchow</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GuntuChilliPaneer.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Guntur Chilli Paneer </h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>9
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Paneer555.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Paneer 555</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>4
+                  </p>
+                </div>
+
+                
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Paneer65.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Paneer 65</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>6
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GobiManchuria.webp') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Gobi Manchuria</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div class="products-grid">
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Gobi65.webp') }}" alt="product image" class="product-img" width="200" loading="lazy">
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Gobi 65</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GunturChilliChicken.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Guntur Chilli Chicken</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Chicken65.webp') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge red">
+                  <ion-icon name="flame"></ion-icon>
+                  <p>Hot</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Chicken 65</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>9
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/MuttonPepperRoast.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge red">
+                  <ion-icon name="flame"></ion-icon>
+                  <p>Hot</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Mutton Pepper Roast</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>4
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GunturChilliFish.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Guntur Chilli Fish</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>6
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/HyderabadiVegDumBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Hyderabad Veg Dum Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div class="products-grid">
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/PaneerGheeRoast.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Paneer Ghee Roast</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/UlavacharuVegDumBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Ulavacharu Veg Dum Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GonguraVegDumBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+                
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Gongura Veg Dum Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>9
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/ChickenDumBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge red">
+                  <ion-icon name="flame"></ion-icon>
+                  <p>Hot</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Chicken Dum Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>4
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/MuttonHyderabadiDumBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Mutton Hyderabadi Dum Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>6
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/PrawnBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Prawn Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div class="products-grid">
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/FishBiryani.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Fish Biryani</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/GulabJamun.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Gulab Jamun</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Rasmalai.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                <div class="card-badge green">
+                  <ion-icon name="leaf"></ion-icon>
+                  <p>Veg</p>
+                </div>
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Rasmalai</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>9
+                  </p>
+                </div>
+
+                
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Coke2.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Coke</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>4
+                  </p>
+                </div>
+
+                <!--<p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </p>-->
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Thumsup2.png') }}" alt="product image" class="product-img" width="200" loading="lazy">
+
+                
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Thumsup</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>6
+                  </p>
+                </div>
+
+                <!--p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </!--p-->
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/CanadaDry2.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Canada Dry</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>14
+                  </p>
+                </div>
+
+                <!--p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </!p-->
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div class="products-grid">
+
+          <a href="#">
+
+            <div class="product-card">
+
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/Sprite.jpg') }}" alt="product image" class="product-img" width="200" loading="lazy">
+              </div>
+
+              <div class="product-content">
+
+                <div class="wrapper">
+                  <h3 class="product-name">Sprite</h3>
+
+                  <p class="product-price">
+                    <span class="small">$</span>11
+                  </p>
+                </div>
+
+                <!--p class="product-text">
+                  tomatoes, nori, feta cheese, mushrooms, rice noodles, corn, shrimp.
+                </!p-->
+
+                <div class="product-rating">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </div>
+
+              </div>
+
+            </div>
+
+          </a>
+          <!--
+        </div>
+        <button class="btn btn-primary btn-icon">
+          <img src="./assets/images/menu.svg" alt="menu icon">
+          Full menu
+        </button> -->
+
+      </section>
+
+
+      <!--
+        - #TESTIMONIALS SECTION
+      -->
+
+      <section class="testimonials" id="testimonials">
+
+        <h2 class="section-title">What our customers say?</h2>
+
+        <p class="section-text">
+          <!--Consectetur numquam poro nemo veniam
+          eligendi rem adipisci quo modi.-->
+        </p>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonials-card">
+
+            <h4 class="card-title">Just perect!</h4>
+
+            <div class="testimonials-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+
+            <p class="testimonials-text">
+              "Exceptional service, warm hospitality, delectable food, and a charming ambiance - our dining experience at this place was truly memorable. The staff went above and beyond to make us feel welcome, and the diverse menu catered to every palate. The attention to detail in both service and food presentation was commendable. A delightful place for anyone seeking a perfect blend of excellent service and mouthwatering dishes."
+           </p>
+
+            <div class="customer-info">
+              <div class="customer-img-box">
+                <img src="{{ url_for('static', filename='images/ReviewSaki.jpg') }}" alt="customer image" class="customer-img" width="100" loading="lazy">
+              </div>
+
+              <h5 class="customer-name">Sai Kiran</h5>
+            </div>
+
+          </div>
+
+          <div class="testimonials-card">
+          
+            <h4 class="card-title">Very Tasty..</h4>
+          
+            <div class="testimonials-rating">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          
+            <p class="testimonials-text">
+              "Our visit to this establishment was a culinary delight, especially with the Mutton Biryani stealing the show. The fragrant aroma and robust flavors of the Mutton Biryani were beyond compare. Each bite was a journey through a symphony of spices and perfectly cooked mutton. The attentive service and inviting ambiance added to the overall experience. If you're a Mutton Biryani enthusiast, this place is a must-visit for an unforgettable gastronomic adventure."
+           </p>
+          
+            <div class="customer-info">
+              <div class="customer-img-box">
+                <img src="{{ url_for('static', filename='images/ReviewPriyanka.jpg') }}" alt="customer image" class="customer-img" width="100" loading="lazy">
+              </div>
+          
+              <h5 class="customer-name">Priyanka</h5>
+            </div>
+          
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!--<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/1941b0b4-1c32-45bb-b59b-7cc3b9bfddb7"></iframe> -->
+    <iframe style="position: fixed; bottom: 0; right: 0; margin: 20px;" width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/1941b0b4-1c32-45bb-b59b-7cc3b9bfddb7"></iframe> 
+</body>
+
+    <!--
+      - #FOOTER
+    -->
+
+    <footer>
+
+      <div class="footer-wrapper">
+
+        <a href="#">
+          <img src="{{ url_for('static', filename='images/mainlogo.png') }}" alt="logo" class="footer-brand" width="130">
+        </a>
+
+        <div class="social-link">
+
+          <a href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+
+          <a href="#">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+
+        </div>
+
+        <p class="copyright">&copy; Copyright 2023. All Rights Reserved.                                                                                                          </p>
+
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="{{ url_for('static', filename='') }}"></script>
+
+  
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+  <!--{%endblock%}-->
+  
+
+</body>
+
+</html>
